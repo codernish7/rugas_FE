@@ -85,6 +85,13 @@
   justify-content: center;
 }
 
+.restaurant-card-link {
+  display: block;
+  width: 280px;
+  text-decoration: none;
+  color: inherit;
+}
+
 .restaurant-card {
   width: 280px;
   border: 1px solid #e0e0e0;
@@ -92,6 +99,16 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: white;
+  height: 100%;
+}
+
+.restaurant-card-link:hover .restaurant-card {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card-link:hover .food-img {
+  transform: scale(1.05);
 }
 
 .restaurant-card:hover {

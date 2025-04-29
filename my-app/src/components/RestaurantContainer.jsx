@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -45,8 +46,13 @@ const RestaurantCard=({listOfRestaurants})=>{
       <>
       
     {listOfRestaurants.map((items)=>{
-      return (
-        <div key={items?.info?.id} className='restaurant-card'>
+      console.log('res id',items?.info?.id)
+      return (<Link 
+        key={items?.info?.id} 
+        to={`restaurant/${items?.info?.id}`} 
+        className="restaurant-card-link"
+      >
+        <div className='restaurant-card'>
        <div className='res-imageContainer'>
          <img className='food-img' src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${items?.info?.cloudinaryImageId}`} alt="food" />
        </div>
@@ -58,7 +64,7 @@ const RestaurantCard=({listOfRestaurants})=>{
          <p>{items?.info?.avgRating}</p>
          </div>
        </div>
-     </div>
+     </div></Link>
       )
     })}
      </>

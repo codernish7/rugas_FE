@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import  Header  from './components/Header';
-import RestaurantContainer from './components/RestaurantContainer';
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -15,10 +15,10 @@ function App() {
   return (
     <>
      <Header/>
-     
-     <RestaurantContainer/>
+     <Outlet/>
     </>
   );
 }
+
 
 export default App;
